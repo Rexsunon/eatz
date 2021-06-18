@@ -1,4 +1,4 @@
-import 'package:eatz/data/dish.dart';
+import 'package:eatz/models/dish.dart';
 import 'package:eatz/models/category.dart';
 import 'package:eatz/utils/assets.dart';
 
