@@ -1,3 +1,4 @@
+import 'package:eatz/data/data.dart';
 import 'package:eatz/screens/home/components/dish_card.dart';
 import 'package:eatz/screens/home/components/greeting_header.dart';
 import 'package:eatz/screens/home/components/search_field.dart';
@@ -46,7 +47,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             SliverToBoxAdapter(
-              child: CategoryCard(icon: Icon(Icons.no_food), label: 'Steak'),
+              child: CategoryCard(),
             ),
             SliverPadding(
               padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 16.0),

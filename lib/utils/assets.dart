@@ -1,6 +1,6 @@
 class Assets {
   static final String _img = "assets/images";
-  static final String _svg = "svgs/images";
+  static final String _svg = "assets/svgs";
 
   // Images
   static final String burger_1 = "$_img/burger1.png";
@@ -10,4 +10,12 @@ class Assets {
   static final String salad = "$_img/salad.png";
   static final String saladSteak = "$_img/salad-steak.png";
   static final String saladSteak_2 = "$_img/salad-steak2.png";
+
+  // Svgs
+  static final String burger = "$_svg/burger.svg";
+  static final String ramen = "$_svg/ramen.svg";
+  static final String rice = "$_svg/rice.svg";
+  static final String saladSvg = "$_svg/salad.svg";
+  static final String steak = "$_svg/steak.svg";
+  static final String sushi = "$_svg/sushi.svg";
 }
