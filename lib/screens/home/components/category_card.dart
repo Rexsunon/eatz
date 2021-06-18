@@ -29,7 +29,7 @@ class CategoryCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              for (int i = 3; i < categoryList.length; i++)
+              for (int i = 3; i < categories.length; i++)
               // Map item = categoryList[i];
                 buildCategoryCard(i)
             ],
@@ -52,13 +52,13 @@ class CategoryCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset(
-              "${categoryList[i]['icon']}",
+              "${categories[i].icon}",
               width: 30.0,
               height: 30.0,
             ),
             SizedBox(height: 10.0),
             Text(
-              "${categoryList[i]['label']}",
+              "${categories[i].label}",
               style: TextStyle(fontWeight: FontWeight.w600),
             ),
           ],
