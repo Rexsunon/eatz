@@ -1,3 +1,4 @@
+import 'package:eatz/screens/home/components/greeting_header.dart';
 import 'package:eatz/screens/home/components/search_field.dart';
 import 'package:flutter/material.dart';
 
@@ -14,73 +15,54 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            leading: CircleAvatar(
-              backgroundColor: Colors.black,
-            ),
-            actions: [Icon(Icons.notifications_none)],
-            floating: false,
-          ),
-          SliverPadding(
-            padding: EdgeInsets.only(top: 16.0),
-            sliver: SliverToBoxAdapter(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: 'Hey, ',
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 16.0,
-                          ),
-                        ),
-                        TextSpan(
-                          text: 'Rex',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ],
+      body: SafeArea(
+        child: CustomScrollView(
+          slivers: [
+            SliverPadding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              sliver: SliverToBoxAdapter(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.black,
                     ),
-                  ),
-                  SizedBox(height: 10.0),
-                  Text(
-                    'Hungry Today?',
-                    style: TextStyle(
-                      fontSize: 25.0,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                ],
+                    Icon(Icons.notifications_none, color: Colors.black)
+                  ],
+                ),
               ),
             ),
-          ),
-          SliverPadding(
-            padding: EdgeInsets.symmetric(vertical: 16.0),
-            sliver: SliverToBoxAdapter(
-              child: SearchField(),
+            SliverPadding(
+              padding: EdgeInsets.only(top: 20.0),
+              sliver: SliverToBoxAdapter(
+                child: GreetingHeader(),
+              ),
             ),
-          ),
-          SliverToBoxAdapter(
-            child: Column(
-              // mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Categories', style: TextStyle(fontWeight: FontWeight.w700),),
-                SizedBox(height: 16.0),
-                CategoryCard(icon: Icon(Icons.no_food), label: 'Steak')
-              ],
+            SliverPadding(
+              padding: EdgeInsets.only(top: 20.0, bottom: 40),
+              sliver: SliverToBoxAdapter(
+                child: SearchField(),
+              ),
             ),
-          )
-        ],
+            SliverToBoxAdapter(
+              child: CategoryCard(icon: Icon(Icons.no_food), label: 'Steak'),
+            ),
+            SliverPadding(
+              padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 16.0),
+              sliver: SliverToBoxAdapter(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Popular Today',
+                      style: TextStyle(fontWeight: FontWeight.w700),
+                    )
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
