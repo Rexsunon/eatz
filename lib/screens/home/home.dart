@@ -1,3 +1,4 @@
+import 'package:eatz/screens/home/components/dish_card.dart';
 import 'package:eatz/screens/home/components/greeting_header.dart';
 import 'package:eatz/screens/home/components/search_field.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +57,8 @@ class _HomeState extends State<Home> {
                     Text(
                       'Popular Today',
                       style: TextStyle(fontWeight: FontWeight.w700),
-                    )
+                    ),
+                    DishCard()
                   ],
                 ),
               ),
