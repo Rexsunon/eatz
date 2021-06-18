@@ -1,6 +1,8 @@
 import 'package:eatz/screens/home/components/search_field.dart';
 import 'package:flutter/material.dart';
 
+import 'components/category_card.dart';
+
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -74,22 +76,7 @@ class _HomeState extends State<Home> {
               children: [
                 Text('Categories', style: TextStyle(fontWeight: FontWeight.w700),),
                 SizedBox(height: 16.0),
-                Container(
-                  width: 100,
-                  height: 100,
-                  child: Card(
-                    // shape: ,
-                    child: Center(
-                      child: Column(
-                        children: [
-                          Icon(Icons.no_food),
-                          SizedBox(height: 10.0),
-                          Text('Steak')
-                        ],
-                      ),
-                    ),
-                  ),
-                )
+                CategoryCard(icon: Icon(Icons.no_food), label: 'Steak')
               ],
             ),
           )
