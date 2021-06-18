@@ -3,7 +3,7 @@ class Dish {
   final String image;
   final String cook;
   final double rating;
-  final double price;
+  final int price;
   final String description;
 
   Dish({

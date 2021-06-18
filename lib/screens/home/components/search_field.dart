@@ -18,7 +18,7 @@ class SearchField extends StatelessWidget {
               ),
               child: TextField(
                 decoration: InputDecoration(
-                  labelText: 'Search',
+                  hintText: 'Search',
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.zero,
                 ),

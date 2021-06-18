@@ -1,8 +1,10 @@
-import 'package:eatz/utils/assets.dart';
+import 'package:eatz/models/dish.dart';
 import 'package:flutter/material.dart';
 
 class DishCard extends StatelessWidget {
-  const DishCard({Key? key}) : super(key: key);
+  const DishCard({Key? key, required this.dish}) : super(key: key);
+
+  final Dish dish;
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +26,12 @@ class DishCard extends StatelessWidget {
             child: Row(
               children: [
                 Image.asset(
-                  Assets.friedShrimps,
+                  dish.image,
                   width: 120,
                   height: 110,
                   cacheWidth: 120,
                   cacheHeight: 110,
-                  fit: BoxFit.fill,
+                  fit: BoxFit.cover,
                 ),
                 SizedBox(width: 5.0),
                 Column(
@@ -37,21 +39,21 @@ class DishCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Fried Shrimps',
+                      dish.name,
                       style: TextStyle(
                         fontSize: 23.0,
                         fontWeight: FontWeight.w800,
                       ),
                     ),
                     SizedBox(height: 3),
-                    Text('by rex k'),
+                    Text('by ${dish.cook}'),
                     SizedBox(height: 3),
                     Row(
                       children: [
                         Icon(Icons.star, size: 16.0),
-                        SizedBox(width: 10),
+                        SizedBox(width: 5),
                         Text(
-                          '4.8',
+                          '${dish.rating}',
                           style: TextStyle(fontWeight: FontWeight.w500),
                         ),
                       ],
@@ -62,13 +64,12 @@ class DishCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          "\$700",
+                          "\$${dish.price}",
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w700,
                           ),
                         ),
-                        SizedBox(width: 130),
                         Container(
                           width: 40.0,
                           height: 40.0,

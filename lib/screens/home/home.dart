@@ -18,6 +18,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+        bottom: false,
         child: CustomScrollView(
           slivers: [
             SliverPadding(
@@ -59,7 +60,8 @@ class _HomeState extends State<Home> {
                       'Popular Today',
                       style: TextStyle(fontWeight: FontWeight.w700),
                     ),
-                    DishCard()
+                    for (var dish in dishes)
+                      DishCard(dish: dish)
                   ],
                 ),
               ),
