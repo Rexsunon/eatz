@@ -17,57 +17,92 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        bottom: false,
-        child: CustomScrollView(
-          slivers: [
-            SliverPadding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0),
-              sliver: SliverToBoxAdapter(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.black,
+      body: Stack(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.width,
+            color: Colors.yellow.shade100,
+          ),
+          SafeArea(
+            bottom: false,
+            child: CustomScrollView(
+              slivers: [
+                SliverPadding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  sliver: SliverToBoxAdapter(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Colors.black,
+                        ),
+                        Icon(Icons.notifications_none, color: Colors.black)
+                      ],
                     ),
-                    Icon(Icons.notifications_none, color: Colors.black)
-                  ],
+                  ),
                 ),
-              ),
-            ),
-            SliverPadding(
-              padding: EdgeInsets.only(top: 20.0),
-              sliver: SliverToBoxAdapter(
-                child: GreetingHeader(),
-              ),
-            ),
-            SliverPadding(
-              padding: EdgeInsets.only(top: 20.0, bottom: 40),
-              sliver: SliverToBoxAdapter(
-                child: SearchField(),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: CategoryCard(),
-            ),
-            SliverPadding(
-              padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 16.0),
-              sliver: SliverToBoxAdapter(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Popular Today',
-                      style: TextStyle(fontWeight: FontWeight.w700),
+                SliverPadding(
+                  padding: EdgeInsets.only(top: 20.0),
+                  sliver: SliverToBoxAdapter(
+                    child: GreetingHeader(),
+                  ),
+                ),
+                SliverPadding(
+                  padding: EdgeInsets.only(top: 20.0, bottom: 40),
+                  sliver: SliverToBoxAdapter(
+                    child: SearchField(),
+                  ),
+                ),
+                SliverToBoxAdapter(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Text(
+                          'Categories',
+                          style: TextStyle(fontWeight: FontWeight.w700),
+                        ),
+                      ),
+                      SizedBox(height: 8.0),
+                      GridView.count(
+                        crossAxisCount: 3,
+                        mainAxisSpacing: 10,
+                        crossAxisSpacing: 10,
+                        padding: EdgeInsets.all(16),
+                        shrinkWrap: true,
+                        children: [
+                          for (var category in categories)
+                            CategoryCard(
+                              category: category,
+                            ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+                SliverPadding(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 30.0, horizontal: 16.0),
+                  sliver: SliverToBoxAdapter(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Popular Today',
+                          style: TextStyle(fontWeight: FontWeight.w700),
+                        ),
+                        for (var dish in dishes) DishCard(dish: dish)
+                      ],
                     ),
-                    for (var dish in dishes)
-                      DishCard(dish: dish)
-                  ],
-                ),
-              ),
-            )
-          ],
-        ),
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:eatz/screens/home/home.dart';
+import 'package:eatz/utils/theme_config.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,9 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter EatZ',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeConfig.lightTheme,
       home: Home(),
     );
   }

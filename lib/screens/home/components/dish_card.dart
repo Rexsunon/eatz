@@ -11,6 +11,7 @@ class DishCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 20.0),
       child: Container(
+        width: MediaQuery.of(context).size.width,
         height: 140.0,
         child: Card(
           elevation: 10.0,
@@ -24,6 +25,8 @@ class DishCard extends StatelessWidget {
               bottom: 10.0,
             ),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
               children: [
                 Image.asset(
                   dish.image,
@@ -58,10 +61,11 @@ class DishCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 5),
+                    // SizedBox(height: 5),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
                           "\$${dish.price}",
