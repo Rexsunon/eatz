@@ -19,7 +19,7 @@ class ThemeConfig {
         elevation: 0.0,
       ),
       canvasColor: lightPrimary,
-      textTheme: GoogleFonts.montserratTextTheme()
+      textTheme: GoogleFonts.montserratTextTheme(),
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -31,6 +31,6 @@ class ThemeConfig {
       appBarTheme: AppBarTheme(
         elevation: 0.0,
       ),
-      fontFamily: 'Montserrat'
+      textTheme: GoogleFonts.montserratTextTheme(),
   );
 }

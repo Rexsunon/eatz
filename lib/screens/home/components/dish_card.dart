@@ -1,4 +1,5 @@
 import 'package:eatz/models/dish.dart';
+import 'package:eatz/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class DishCard extends StatelessWidget {
@@ -12,7 +13,7 @@ class DishCard extends StatelessWidget {
       padding: const EdgeInsets.only(top: 20.0),
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: 140.0,
+        height: Constants.kDishCardHeight,
         child: Card(
           elevation: 10.0,
           shape: RoundedRectangleBorder(

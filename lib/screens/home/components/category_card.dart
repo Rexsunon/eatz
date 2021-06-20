@@ -1,4 +1,5 @@
 import 'package:eatz/models/category.dart';
+import 'package:eatz/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -10,8 +11,8 @@ class CategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100.0,
-      height: 100.0,
+      width: Constants.kCategoryCardSize,
+      height: Constants.kCategoryCardSize,
       child: Card(
         elevation: 10.0,
         shape: RoundedRectangleBorder(
@@ -22,8 +23,8 @@ class CategoryCard extends StatelessWidget {
           children: [
             SvgPicture.asset(
               "${category.icon}",
-              width: 30.0,
-              height: 30.0,
+              width: Constants.kCategoryIconSize,
+              height: Constants.kCategoryIconSize,
             ),
             SizedBox(height: 10.0),
             Text(
