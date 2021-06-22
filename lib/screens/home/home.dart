@@ -71,6 +71,8 @@ class _HomeState extends State<Home> {
                       ),
                       SizedBox(height: 8.0),
                       GridView.count(
+                        // Added this so the grid wont scroll separately
+                        physics: NeverScrollableScrollPhysics(),
                         crossAxisCount: 3,
                         mainAxisSpacing: 10,
                         crossAxisSpacing: 10,
