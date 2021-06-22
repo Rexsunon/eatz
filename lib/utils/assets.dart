@@ -3,6 +3,7 @@ class Assets {
   static final String _svg = "assets/svgs";
 
   // Images
+  static final String dp = "$_img/dp.jpg";
   static final String burger_1 = "$_img/burger1.png";
   static final String burger_2 = "$_img/burger2.png";
   static final String friedShrimps = "$_img/fried-shrimps.png";

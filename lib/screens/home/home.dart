@@ -2,6 +2,7 @@ import 'package:eatz/data/data.dart';
 import 'package:eatz/screens/home/components/dish_card.dart';
 import 'package:eatz/screens/home/components/greeting_header.dart';
 import 'package:eatz/screens/home/components/search_field.dart';
+import 'package:eatz/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 import 'components/category_card.dart';
@@ -39,6 +40,7 @@ class _HomeState extends State<Home> {
                       children: [
                         CircleAvatar(
                           backgroundColor: Colors.black,
+                          child: ClipOval(child: Image.asset(Assets.dp)),
                         ),
                         Icon(Icons.notifications_none, color: Colors.black)
                       ],
